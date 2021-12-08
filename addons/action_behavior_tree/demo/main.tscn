@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/action_behavior_tree/demo/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/action_behavior_tree/demo/char.tscn" type="PackedScene" id=2]
+
+[node name="main" type="Node2D"]
+position = Vector2( 470, 300 )
+
+[node name="enemy" parent="." instance=ExtResource( 1 )]
+position = Vector2( 49, -16 )
+
+[node name="char" parent="." instance=ExtResource( 2 )]
+position = Vector2( -154, -30 )

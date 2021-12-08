@@ -1,0 +1,51 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "BNode",
+"language": "GDScript",
+"path": "res://addons/action_behavior_tree/lib/b_node.gd"
+}, {
+"base": "Resource",
+"class": "HitState",
+"language": "GDScript",
+"path": "res://addons/action_behavior_tree/demo/hit_state.gd"
+} ]
+_global_script_class_icons={
+"BNode": "res://addons/action_behavior_tree/lib/b_node.png",
+"HitState": ""
+}
+
+[application]
+
+config/name="behavor_tree"
+config/icon="res://icon.png"
+
+[debug]
+
+settings/fps/force_fps=60
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/action_behavior_tree/plugin.cfg" )
+
+[global]
+
+fps=false
+frame=false
+
+[physics]
+
+common/enable_pause_aware_picking=true
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
