@@ -57,6 +57,12 @@ func _enter_tree():
 		preload("res://addons/action_behavior_tree/lib/queue.gd"),
 		preload("res://addons/action_behavior_tree/lib/queue.png")
 	)
+	add_custom_type(
+		"Monitor",
+		"GraphEdit",
+		preload("res://addons/action_behavior_tree/lib/monitor.gd"),
+		preload("res://addons/action_behavior_tree/lib/monitor.png")
+	)
 	pass
 
 
@@ -70,4 +76,5 @@ func _exit_tree():
 	remove_custom_type("Period")
 	remove_custom_type("Probable")
 	remove_custom_type("Queue")
+	remove_custom_type("Monitor")
 	pass
