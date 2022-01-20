@@ -35,7 +35,7 @@ settings/fps/force_fps=60
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/action_behavior_tree/plugin.cfg" )
+enabled=PoolStringArray(  )
 
 [global]
 
@@ -45,7 +45,3 @@ frame=false
 [physics]
 
 common/enable_pause_aware_picking=true
-
-[rendering]
-
-environment/default_environment="res://default_env.tres"

@@ -27,6 +27,8 @@ var last_status = -1
 var frame = 0
 var frame_listeners = []
 
+var _last_frame = false
+
 class Tick:
 	var target
 	var frame_context: Dictionary
@@ -39,6 +41,11 @@ class Tick:
 		
 	func end_frame():
 		frame_context.clear()
+
+func has_new():
+	var active = _last_frame
+	_last_frame = false
+	return active
 
 func tick(tick: Tick):
 	return Status.SUCCEED; 
@@ -59,6 +66,7 @@ func run_tick(tick: Tick):
 			frame = 0
 	if new_status == Status.RUNNING:
 		frame += 1
+	_last_frame = true
 	return last_status
 
 func reset():
@@ -75,3 +83,6 @@ func get_root_node() -> BNode:
 
 func get_parent_node() -> BNode:
 	return null
+
+func debug_data() -> Dictionary:
+	return {}

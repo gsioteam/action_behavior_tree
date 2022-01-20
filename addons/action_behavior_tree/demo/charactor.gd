@@ -14,7 +14,7 @@ func _ready():
 	set_meta("type", "Character")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	$behav.run_tick(tick)
 	tick.end_frame()
 	if speed != Vector2():

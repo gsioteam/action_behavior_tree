@@ -24,7 +24,7 @@ func _init():
 
 func tick(tick):
 	if running_child != null:
-		var result = running_child.tick(tick)
+		var result = running_child.run_tick(tick)
 		if result != Status.RUNNING:
 			running_child = null
 		return result
@@ -39,7 +39,7 @@ func tick(tick):
 		if can_cancel(tick):
 			var child = find_first()
 			if child != null:
-				var result = child.tick(tick)
+				var result = child.run_tick(tick)
 				match result:
 					Status.RUNNING:
 						running_child = child

@@ -1,13 +1,61 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/action_behavior_tree/demo/enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/action_behavior_tree/demo/char.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/action_behavior_tree/lib/monitor.tscn" type="PackedScene" id=3]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Node2D
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_Button_pressed():
+	var size = get_viewport_rect().size
+	$window.popup(Rect2(0, 0, size.x / 2, size.y / 2))
+"
 
 [node name="main" type="Node2D"]
 position = Vector2( 470, 300 )
+script = SubResource( 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = -467.0
+margin_top = -296.0
+margin_right = -368.0
+margin_bottom = -276.0
+text = "Show Monitor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="window" type="WindowDialog" parent="."]
+margin_left = -289.0
+margin_top = -124.0
+margin_right = -241.0
+margin_bottom = -84.0
+resizable = true
+
+[node name="monitor" parent="window" instance=ExtResource( 3 )]
+target_path = NodePath("../../enemy/behav")
 
 [node name="enemy" parent="." instance=ExtResource( 1 )]
 position = Vector2( 49, -16 )
 
 [node name="char" parent="." instance=ExtResource( 2 )]
-position = Vector2( -154, -30 )
+position = Vector2( -332, 219 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

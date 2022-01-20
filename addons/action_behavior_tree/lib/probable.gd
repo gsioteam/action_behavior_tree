@@ -6,3 +6,8 @@ var last_randon = 0
 func test(tick):
 	last_randon = randf()
 	return last_randon < probability
+
+func debug_data():
+	return {
+		"random": last_randon
+	}
