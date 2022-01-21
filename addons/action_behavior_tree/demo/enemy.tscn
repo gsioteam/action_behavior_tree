@@ -108,7 +108,7 @@ duration = 60
 
 [node name="right" type="Node" parent="behav/control/walk_around"]
 script = ExtResource( 3 )
-probability = 0.25
+probability = 0.33
 
 [node name="Period" type="Node" parent="behav/control/walk_around/right"]
 script = ExtResource( 11 )
@@ -119,7 +119,7 @@ angle = 90
 
 [node name="down" type="Node" parent="behav/control/walk_around"]
 script = ExtResource( 3 )
-probability = 0.25
+probability = 0.5
 
 [node name="Period" type="Node" parent="behav/control/walk_around/down"]
 script = ExtResource( 11 )
