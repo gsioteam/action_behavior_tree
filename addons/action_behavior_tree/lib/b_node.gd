@@ -29,6 +29,10 @@ var frame_listeners = []
 
 var _last_frame = false
 
+var ticking = false
+
+export (bool) var enable = true
+
 class Tick:
 	var target
 	var frame_context: Dictionary
@@ -48,10 +52,16 @@ func has_new():
 	return active
 
 func tick(tick: Tick):
-	return Status.SUCCEED; 
+	return Status.SUCCEED
+
+func post_tick(tick: Tick):
+	pass
 
 func run_tick(tick: Tick):
-	var need_remove = [];
+	if not enable:
+		return Status.FAILED
+	ticking = true
+	var need_remove = []
 	for listener in frame_listeners:
 		if listener.tick():
 			need_remove.append(listener)
@@ -66,7 +76,9 @@ func run_tick(tick: Tick):
 			frame = 0
 	if new_status == Status.RUNNING:
 		frame += 1
+	post_tick(tick)
 	_last_frame = true
+	ticking = false
 	return last_status
 
 func reset():
@@ -86,3 +98,10 @@ func get_parent_node() -> BNode:
 
 func debug_data() -> Dictionary:
 	return {}
+
+func _request_focus(child: BNode):
+	pass
+
+func require_focus():
+	pass
+

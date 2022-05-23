@@ -21,6 +21,7 @@ func tick(tick: Tick):
 				return result;
 		return Status.FAILED
 
+# Override
 func test(tick: Tick):
 	return false;
 	

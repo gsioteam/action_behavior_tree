@@ -16,5 +16,5 @@ func action(tick):
 		tick.target.speed = Vector2()
 	return Status.FAILED
 
-func running(tick):
+func running(tick, frames):
 	tick.target.speed = speed * 0.8

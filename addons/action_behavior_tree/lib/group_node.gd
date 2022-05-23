@@ -30,3 +30,12 @@ func get_parent_node() -> BNode:
 	if parent is BNode:
 		return parent
 	return null
+
+func require_focus():
+	var child = self
+	var parent = get_parent_node()
+	while parent != null:
+		parent._request_focus(child)
+		child = parent
+		parent = parent.get_parent_node()
+

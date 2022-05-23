@@ -27,6 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="behavor_tree"
+run/main_scene="res://addons/action_behavior_tree/demo/main.tscn"
 config/icon="res://icon.png"
 
 [debug]

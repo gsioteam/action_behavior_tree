@@ -9,9 +9,9 @@ func action(tick):
 	yield(tick.target.play_anim(animation), "completed")
 	return Status.SUCCEED
 
-func can_cancel(tick):
+func can_cancel(tick, frames):
 	return bodis != null && bodis.size() > 0
 
-func running(tick):
+func running(tick, frames):
 	if hit_state != null:
 		tick.target.attack(hit_state, bodis)

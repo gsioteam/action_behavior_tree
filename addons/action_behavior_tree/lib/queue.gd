@@ -10,7 +10,7 @@ class TaskQueue:
 			return BNode.Status.FAILED
 		
 		var child:BNode = children[index]
-		var result = child.tick(tick)
+		var result = child.run_tick(tick)
 		if result != BNode.Status.RUNNING:
 			index += 1
 			if index < children.size():
@@ -21,7 +21,7 @@ var task_queue: TaskQueue = TaskQueue.new()
 
 func tick(tick: Tick):
 	if not task_queue.inited:
-		_reset_queue()
+		reset()
 	
 	var result = task_queue.tick(tick)
 	if result != Status.RUNNING:
@@ -33,4 +33,9 @@ func _reset_queue():
 	for child in get_children():
 		if child is BNode:
 			task_queue.children.append(child)
+	task_queue.index = 0
 	task_queue.inited = true
+
+func reset():
+	.reset()
+	_reset_queue()
