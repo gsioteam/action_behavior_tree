@@ -81,6 +81,8 @@ func _run_action(tick: Tick):
 	return result;
 
 # Override
+# If the result of this method is `GDScriptFunctionState` 
+# before it is completed, the result of `tick` will be `RUNNING`.
 func action(tick: Tick):
 	return Status.FAILED
 

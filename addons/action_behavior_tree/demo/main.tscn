@@ -38,9 +38,6 @@ margin_top = -296.0
 margin_right = -368.0
 margin_bottom = -276.0
 text = "Show Monitor"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="window" type="WindowDialog" parent="."]
 margin_left = -289.0

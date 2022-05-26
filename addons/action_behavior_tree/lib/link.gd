@@ -1,5 +1,6 @@
 extends "res://addons/action_behavior_tree/lib/group_node.gd"
-
+#
+# The behavior of this node is same as the target node.
 export (NodePath) var target_path
 
 var _target
@@ -16,3 +17,4 @@ func reset():
 
 func tick(tick: Tick):
 	return get_target().run_tick(tick)
+
