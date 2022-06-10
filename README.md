@@ -26,8 +26,8 @@ be `RUNNING` until `action` method is complete.
 func action(tick):
     bodis = []
     # The returned state will be Status.RUNNING until animation completed.
-	yield(tick.target.play_anim(animation), "completed")
-	return Status.SUCCEED
+    yield(tick.target.play_anim(animation), "completed")
+    return Status.SUCCEED
 ```
 
 In a `tick` if the `action` is still in running, `running` method will be invoked.
@@ -41,7 +41,7 @@ Status.FAILED, move focus to that child.
 A condition node, returns `FAILED` while the result 
 of `test` method is `false`. Otherwise the child node
 will be ran. The `test` method will not be invoked while
-child node is in `RUNNING` state.
+the child node is in `RUNNING` state.
 
 ### Link Node
 
