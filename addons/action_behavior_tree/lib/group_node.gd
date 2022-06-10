@@ -7,6 +7,11 @@ func _ready():
 	if children_count > 0 && get_child_count() != children_count:
 		push_warning(str("Children count(", children_count, ") is not match."));
 
+func _get_configuration_warning():
+	if children_count > 0 && children_count != get_child_count():
+		return str("Children count(", children_count, ") is not match.")
+	return ""
+
 func find_first() -> BNode:
 	for child in get_children():
 		if child is BNode:

@@ -1,3 +1,4 @@
+tool
 extends "res://addons/action_behavior_tree/lib/if.gd"
 
 export(NodePath) var scanner
