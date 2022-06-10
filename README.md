@@ -4,7 +4,7 @@ A behavior tree plugin for action games.
 
 In many cases we want the behavior tree have continuous state capabilities.
 For example, during a character cast an action, we need this behavior tree 
-focus on this action and no need to check or toggle states in local branches.
+focus on this action and no need to check or toggle states in partial branches.
 
 A `RUNNING` status is added for indicating that this node is running continuously.
 
