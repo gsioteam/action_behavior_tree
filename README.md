@@ -66,4 +66,5 @@ will be ran after prev child node is complete
 
 ### Switch Node
 
-Run selected child node.
+Run the selected child node.
+
