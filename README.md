@@ -55,7 +55,7 @@ Move focus to target node.
 
 Totaly same as Selector node. But if a child node 
 returns `RUNNING`, that child node will get focus.
-And the select behavior will continue after that 
+And the selecting behavior will continue after that 
 child node is complete (No longer in `RUNNING` state).
 
 ### Queue Node
